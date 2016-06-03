@@ -5,6 +5,9 @@ const defaultPassthrough = /^node_modules/;
 class InlineCssCompiler {
   constructor(config) {
     this.config = config && config.plugins && config.plugins.inlineCss || {};
+    if (this.config.html === true) {
+      this.pattern = /(\.css)|(\.html)$/i;
+    }
     if (this.config.pattern) {
       this.pattern = this.config.pattern;
     }

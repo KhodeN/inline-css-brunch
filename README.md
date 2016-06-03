@@ -40,6 +40,12 @@ If you don't want anything to passthrough, you can pass `false` for this option.
 
 This behaviour means you don't need to include `css-brunch` in addition to this one. Unless you want the CSS modules.
 
+### `html`
+
+If defined and `true` will cause this plugin to inline `.html` files as well. This can save you needing to install `html-brunch`. Bear in mind that this plugin exports the string directly from the module while `html-brunch` wraps it in a function. This isn't a drop-in replacement.
+
+If a `pattern` is specified, this parameter will have no effect and you'll need to adjust your pattern to include `.html` files.
+
 ## Usage
 
 ```js
