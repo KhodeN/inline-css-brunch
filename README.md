@@ -52,7 +52,7 @@ If a `pattern` is specified, this parameter will have no effect and you'll need 
 const myCssString = require('./my-css-file.css');
 ```
 
-If you have JS/TS files with the same base name as your CSS files, and you want to refer to those files without their extension, you may want to include this in your config file:
+If you have JS/TS files with the same base name as your CSS files, and you want to refer to those files without their extension, you will probably need to include this in your config file:
 
 ```js
 exports.config = {
