@@ -1,18 +1,20 @@
 # inline-css-brunch
 
-Brunch plugin to read your CSS files as strings in JS. This is useful for frameworks like Angular 2 so you don't need to make separate requests for styles.
+This is fork of https://github.com/colinbate/inline-css-brunch.
 
-As of version 2.0.0 of this plugin, it requires Brunch 2.6 or later.
+Brunch plugin to read your SCSS files, compile to CSS and stores as strings in JS. This is useful for frameworks like Angular 2 so you don't need to make separate requests for styles.
+
+Requires Brunch 2.6 or later and node-sass.
 
 ## Install
 
 ```sh
-npm install -D inline-css-brunch
+npm install -D inline-scss-brunch
 ```
 
 ## Configuration
 
-As of version 2.0.0, you can configure where the plugin is used.
+You can configure where the plugin is used.
 
 ```js
 exports.config = {
@@ -40,26 +42,24 @@ If you don't want anything to passthrough, you can pass `false` for this option.
 
 This behaviour means you don't need to include `css-brunch` in addition to this one. Unless you want the CSS modules.
 
-### `html`
+### `options`
 
-If defined and `true` will cause this plugin to inline `.html` files as well. This can save you needing to install `html-brunch`. Bear in mind that this plugin exports the string directly from the module while `html-brunch` wraps it in a function. This isn't a drop-in replacement.
-
-If a `pattern` is specified, this parameter will have no effect and you'll need to adjust your pattern to include `.html` files.
+Options to pass for `node-sass` directly.
 
 ## Usage
 
 ```js
-const myCssString = require('./my-css-file.css');
+const myCssString = require('./my-css-file.scss');
 ```
 
-If you have JS/TS files with the same base name as your CSS files, and you want to refer to those files without their extension, you will probably need to include this in your config file:
+If you have JS/TS files with the same base name as your SCSS files, and you want to refer to those files without their extension, you will probably need to include this in your config file:
 
 ```js
 exports.config = {
   files: {
     javascripts: {
       order: {
-        after: [/\.css$/]
+        after: [/\.scss$/]
       }
     }
   }
