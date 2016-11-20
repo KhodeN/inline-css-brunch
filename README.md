@@ -19,8 +19,11 @@ You can configure where the plugin is used.
 ```js
 exports.config = {
   plugins: {
-    inlineCss: {
-      passthrough: /^(node_modules)|(app\/styles)/
+    inlineScss: {
+      passthrough: /^(node_modules)|(app\/styles)/,
+      options: {
+        outputStyle: 'nested'
+      }
     }
   }
 }
@@ -28,7 +31,7 @@ exports.config = {
 
 ### `pattern`
 
-Similar to other plugins, this defines which files Brunch will send to this plugin. If you want it to only handle CSS files from a particular part of your app, this will do it. This value can be a string with wildcards or a RegExp or any array of those things.
+Similar to other plugins, this defines which files Brunch will send to this plugin. If you want it to only handle SCSS files from a particular part of your app, this will do it. This value can be a string with wildcards or a RegExp or any array of those things.
 
 ### `passthrough`
 
