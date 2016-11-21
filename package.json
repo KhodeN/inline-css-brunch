@@ -1,6 +1,6 @@
 {
   "name": "inline-scss-brunch",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Brunch plugin to read and compile your SCSS files as strings in JS.",
   "main": "index.js",
   "scripts": {
